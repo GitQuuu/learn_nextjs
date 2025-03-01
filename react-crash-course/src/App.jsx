@@ -1,8 +1,9 @@
 import './App.css'
+import Post from "./components/post.jsx";
 
 function App() {
   return (
-    <h1>Hello world!</h1>
+    <Post></Post>
   )
 }
 
