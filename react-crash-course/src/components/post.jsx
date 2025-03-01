@@ -3,7 +3,7 @@ function Post(props) {
     props.body;
     return (
         <div>
-            <p>{props.author}</p>
+            <p className={'text-red-500'}>{props.author}</p>
             <p>{props.body}</p>
         </div>
     )
