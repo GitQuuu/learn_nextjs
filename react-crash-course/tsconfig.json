@@ -10,8 +10,6 @@
   ],
   "compilerOptions": {
     "baseUrl": ".",
-    "module": "CommonJS",
-    "esModuleInterop": true,
     "paths": {
       "@/*": ["./src/*"]
     }

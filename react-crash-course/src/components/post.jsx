@@ -1,11 +1,21 @@
+import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card.js";
+
 function Post(props) {
     props.author;
     props.body;
     return (
-        <div>
-            <p className={'text-red-500'}>{props.author}</p>
-            <p>{props.body}</p>
-        </div>
+    <Card className="m-3">
+        <CardHeader>
+            <CardTitle>{props.author}</CardTitle>
+            <CardDescription>{props.body}</CardDescription>
+        </CardHeader>
+        <CardContent>
+            <p>Card Content</p>
+        </CardContent>
+        <CardFooter>
+            <p>Card Footer</p>
+        </CardFooter>
+    </Card>
     )
 }
 
