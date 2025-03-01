@@ -3,8 +3,9 @@ import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} f
 function Post(props) {
     props.author;
     props.body;
+    
     return (
-    <Card className="m-3">
+    <Card className="m-3 bg-blue-200">
         <CardHeader>
             <CardTitle>{props.author}</CardTitle>
             <CardDescription>{props.body}</CardDescription>
