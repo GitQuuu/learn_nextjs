@@ -3,7 +3,12 @@ import Post from "./components/post.jsx";
 
 function App() {
   return (
-    <Post></Post>
+    <main>
+      <Post></Post>
+      <Post></Post>
+      <Post></Post>
+      <Post></Post>
+    </main>
   )
 }
 
