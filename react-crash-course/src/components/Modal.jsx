@@ -4,7 +4,7 @@ export function Modal({children}) {
     return (
         <>
             <div className={classes.backdrop}/>
-            <dialog open className={classes.modal}>
+            <dialog open className={'flex mx-auto'}>
                 {children}
             </dialog>
         </>
