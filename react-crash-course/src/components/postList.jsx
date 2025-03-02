@@ -6,6 +6,11 @@ import {Modal} from "@/components/Modal.jsx";
 export default function PostList(){
     const [enteredBody, setEnteredBody] = useState([]);
     const [enteredAuthor, setEnteredAuthor] = useState([]);
+    const [modalIsVisible, setModalIsVisible] = useState(true);
+
+    function toggleModal() {
+        setModalIsVisible(false);
+    }
 
     function bodyChangeHandler(event){
         setEnteredBody(event.target.value);
@@ -16,9 +21,13 @@ export default function PostList(){
     }
     return (
         <>
-            <Modal>
-                <NewPost onBodyChange={bodyChangeHandler} onAuthorChange={authorChangeHandler}></NewPost>
-            </Modal>
+            {modalIsVisible && (
+                <Modal isVisible={modalIsVisible} onOutsideModalClick={toggleModal} >
+                    <NewPost onBodyChange={bodyChangeHandler} onAuthorChange={authorChangeHandler}></NewPost>
+                </Modal>
+                )
+            }
+
             <div className='flex'>
                 <Post author={enteredAuthor} body={enteredBody}></Post>
                 <Post author="Qu" body="Still fan of Angular"></Post>
