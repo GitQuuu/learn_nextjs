@@ -3,14 +3,11 @@ import NewPost from "@/components/NewPost.jsx";
 import {useState} from "react";
 import {Modal} from "@/components/Modal.jsx";
 
-export default function PostList(){
+export default function PostList({onCreatePostClickedShowModal, onOutsideModalClicked}){
     const [enteredBody, setEnteredBody] = useState([]);
     const [enteredAuthor, setEnteredAuthor] = useState([]);
-    const [modalIsVisible, setModalIsVisible] = useState(true);
 
-    function toggleModal() {
-        setModalIsVisible(false);
-    }
+
 
     function bodyChangeHandler(event){
         setEnteredBody(event.target.value);
@@ -21,8 +18,8 @@ export default function PostList(){
     }
     return (
         <>
-            {modalIsVisible && (
-                <Modal isVisible={modalIsVisible} onOutsideModalClick={toggleModal} >
+            {onCreatePostClickedShowModal && (
+                <Modal onOutsideModalClick={onOutsideModalClicked} >
                     <NewPost onBodyChange={bodyChangeHandler} onAuthorChange={authorChangeHandler}></NewPost>
                 </Modal>
                 )
