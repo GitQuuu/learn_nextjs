@@ -15,7 +15,9 @@ export default function PostList(){
     }
     return (
         <>
-            <NewPost onBodyChange={bodyChangeHandler} onAuthorChange={authorChangeHandler}></NewPost>
+            <Modal>
+                <NewPost onBodyChange={bodyChangeHandler} onAuthorChange={authorChangeHandler}></NewPost>
+            </Modal>
             <div className='flex'>
                 <Post author={enteredAuthor} body={enteredBody}></Post>
                 <Post author="Qu" body="Still fan of Angular"></Post>
