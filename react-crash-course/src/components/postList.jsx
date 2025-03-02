@@ -1,6 +1,7 @@
 import Post from "@/components/post.jsx";
 import NewPost from "@/components/NewPost.jsx";
 import {useState} from "react";
+import {Modal} from "@/components/Modal.jsx";
 
 export default function PostList(){
     const [enteredBody, setEnteredBody] = useState([]);
