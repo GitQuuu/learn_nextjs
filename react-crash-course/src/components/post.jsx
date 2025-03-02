@@ -1,4 +1,4 @@
-import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card.js";
+import {Card, CardDescription, CardHeader, CardTitle} from "@/components/ui/card.js";
 
 function Post(props) {
     props.author;
@@ -10,12 +10,6 @@ function Post(props) {
             <CardTitle>{props.author}</CardTitle>
             <CardDescription>{props.body}</CardDescription>
         </CardHeader>
-        <CardContent>
-            <p>Card Content</p>
-        </CardContent>
-        <CardFooter>
-            <p>Card Footer</p>
-        </CardFooter>
     </Card>
     )
 }
