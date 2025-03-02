@@ -20,7 +20,12 @@ export default function PostList({onCreatePostClickedShowModal, onOutsideModalCl
         <>
             {onCreatePostClickedShowModal && (
                 <Modal onOutsideModalClick={onOutsideModalClicked} >
-                    <NewPost onBodyChange={bodyChangeHandler} onAuthorChange={authorChangeHandler}></NewPost>
+                    <NewPost
+                        onCancel={onOutsideModalClicked}
+                        onBodyChange={bodyChangeHandler}
+                        onAuthorChange={authorChangeHandler}>
+
+                    </NewPost>
                 </Modal>
                 )
             }
