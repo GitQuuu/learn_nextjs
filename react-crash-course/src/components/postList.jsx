@@ -4,36 +4,20 @@ import {useState} from "react";
 import {Modal} from "@/components/Modal.jsx";
 
 export default function PostList({onCreatePostClickedShowModal, onOutsideModalClicked}){
-    const [enteredBody, setEnteredBody] = useState([]);
-    const [enteredAuthor, setEnteredAuthor] = useState([]);
 
-
-
-    function bodyChangeHandler(event){
-        setEnteredBody(event.target.value);
-    }
-
-    function authorChangeHandler(event){
-        setEnteredAuthor(event.target.value);
-    }
     return (
         <>
             {onCreatePostClickedShowModal && (
                 <Modal onOutsideModalClick={onOutsideModalClicked} >
                     <NewPost
-                        onCancel={onOutsideModalClicked}
-                        onBodyChange={bodyChangeHandler}
-                        onAuthorChange={authorChangeHandler}>
-
+                        onCancel={onOutsideModalClicked}>22
                     </NewPost>
                 </Modal>
                 )
             }
 
             <div className='flex'>
-                <Post author={enteredAuthor} body={enteredBody}></Post>
-                <Post author="Qu" body="Still fan of Angular"></Post>
-                <Post author="Qu" body="Maybe Svelte 5"></Post>
+                <Post author="Qu" body="Still fan of Angular"></Post>,
             </div>
         </>
     )
