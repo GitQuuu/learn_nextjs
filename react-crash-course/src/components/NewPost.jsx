@@ -1,6 +1,7 @@
 import classes from './NewPost.module.css';
+import {useState} from "react";
 
-function NewPost({onBodyChange, onAuthorChange, onCancel}) {
+function NewPost({onCancel}) {
     const [enteredBody, setEnteredBody] = useState([]);
     const [enteredAuthor, setEnteredAuthor] = useState([]);
 
