@@ -7,10 +7,10 @@ export default function PostList({onCreatePostClickedShowModal, onOutsideModalCl
     const [posts, setPosts] = useState([]);
 
     function addPostHandler(postData){
-        setPosts(postData, ...posts);
+        setPosts( (existingPost) => [postData, ...postData] );
     };
 
-
+2
     return (
         <>
             {onCreatePostClickedShowModal && (
