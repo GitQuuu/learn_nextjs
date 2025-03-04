@@ -4,13 +4,19 @@ import {useState} from "react";
 import {Modal} from "@/components/Modal.jsx";
 
 export default function PostList({onCreatePostClickedShowModal, onOutsideModalClicked}){
+    const [posts, setPosts] = useState([]);
 
+    function addPostHandler(postData){
+        setPosts(postData, ...posts);
+    };
+
+    
     return (
         <>
             {onCreatePostClickedShowModal && (
                 <Modal onOutsideModalClick={onOutsideModalClicked} >
                     <NewPost
-                        onCancel={onOutsideModalClicked}>22
+                        onCancel={onOutsideModalClicked} onAddPost={addPostHandler}>
                     </NewPost>
                 </Modal>
                 )
