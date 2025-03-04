@@ -7,9 +7,8 @@ export default function PostList({onCreatePostClickedShowModal, onOutsideModalCl
     const [posts, setPosts] = useState([]);
 
     function addPostHandler(postData){
-
-
         setPosts( (existingPost) => [postData, ...existingPost] );
+        console.log(postData);
     };
 
 2
@@ -24,11 +23,13 @@ export default function PostList({onCreatePostClickedShowModal, onOutsideModalCl
                 )
             }
 
-            <div className='flex'>
-                {posts.map((post) =>
-                    <Post key={post.body} author={post.author} body={post.body} />)
-                }
-            </div>
+            {posts.length > 0 ? (
+                <div className='flex'>
+                    {posts.map((post) =>
+                        <Post key={post.body} author={post.author} body={post.body} />)
+                    }
+                </div>
+            ) : <p className={'text-2xl text-red-600'}>No posts found.</p>}
         </>
     )
 }
