@@ -10,7 +10,7 @@ export default function PostList({onCreatePostClickedShowModal, onOutsideModalCl
         setPosts(postData, ...posts);
     };
 
-    
+
     return (
         <>
             {onCreatePostClickedShowModal && (
