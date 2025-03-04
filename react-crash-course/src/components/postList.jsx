@@ -7,7 +7,9 @@ export default function PostList({onCreatePostClickedShowModal, onOutsideModalCl
     const [posts, setPosts] = useState([]);
 
     function addPostHandler(postData){
-        setPosts( (existingPost) => [postData, ...postData] );
+
+
+        setPosts( (existingPost) => [postData, ...existingPost] );
     };
 
 2
@@ -23,7 +25,9 @@ export default function PostList({onCreatePostClickedShowModal, onOutsideModalCl
             }
 
             <div className='flex'>
-                <Post author="Qu" body="Still fan of Angular"></Post>,
+                {posts.map((post) =>
+                    <Post key={post.body} author={post.author} body={post.body} />)
+                }
             </div>
         </>
     )
