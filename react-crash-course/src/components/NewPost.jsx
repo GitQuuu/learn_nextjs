@@ -20,6 +20,7 @@ function NewPost({onCancel}) {
             author: enteredAuthor,
         }
         console.log(postData);
+        onCancel();
     }
     return (
         <form className={classes.form} onSubmit={submitHandler}>
@@ -37,7 +38,7 @@ function NewPost({onCancel}) {
                     onClick={onCancel}
                 >Cancel
                 </button>
-                <button>Submit</button>
+                <button type={"submit"}>Submit</button>
             </p>
         </form>
     );
