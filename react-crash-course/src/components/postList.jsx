@@ -1,24 +1,37 @@
 import Post from "@/components/post.jsx";
 import NewPost from "@/components/NewPost.jsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Modal} from "@/components/Modal.jsx";
 
 export default function PostList({onCreatePostClickedShowModal, onOutsideModalClicked}){
     const [posts, setPosts] = useState([]);
 
+    useEffect(() => {
+        async function fetchPosts(){
+            const response = await fetch("http://localhost:8080/posts", {
+                method: "GET",
+            })
+            const responseData = await response.json();
+            console.log(responseData);
+            setPosts(responseData.posts);
+        }
+
+        fetchPosts().then();
+    }, []);
+
     function addPostHandler(postData){
-        // fetch("http://localhost:8080/posts", {
-        //     method: "POST",
-        //     body: JSON.stringify(postData),
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //         "Accept": "application/json",
-        //     }
-        // }).then(response => response.json()
-        //     .then(json => {
-        //         setPosts(json.Posts)
-        //     })
-        // );
+        fetch("http://localhost:8080/posts", {
+            method: "POST",
+            body: JSON.stringify(postData),
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            }
+        }).then(response => response.json()
+            .then(json => {
+                setPosts(json.Posts)
+            })
+        );
         setPosts( (existingPost) => [postData, ...existingPost] );
         console.log(postData);
     }
