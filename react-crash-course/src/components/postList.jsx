@@ -5,10 +5,11 @@ import {Modal} from "@/components/Modal.jsx";
 
 export default function PostList({onCreatePostClickedShowModal, onOutsideModalClicked}){
     const [posts, setPosts] = useState([]);
-    const [isFetching, setIfFetching] = useState(false);
+    const [isFetching, setIsFetching] = useState(false);
 
     useEffect(() => {
         async function fetchPosts(){
+            setIsFetching(true);
             const response = await fetch("http://localhost:8080/posts", {
                 method: "GET",
             })
@@ -49,6 +50,11 @@ export default function PostList({onCreatePostClickedShowModal, onOutsideModalCl
                 )
             }
 
+
+            {isFetching && posts.length === 0 && (
+                <p className={'text-2xl text-red-600'}>Loading.....</p>
+            )}
+
             {posts.length > 0 ? (
                 <div className='flex'>
                     {posts.map((post) =>
@@ -56,6 +62,8 @@ export default function PostList({onCreatePostClickedShowModal, onOutsideModalCl
                     }
                 </div>
             ) : <p className={'text-2xl text-red-600'}>No posts found.</p>}
+
+
         </>
     )
 }
