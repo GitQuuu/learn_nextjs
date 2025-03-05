@@ -14,12 +14,16 @@ export default function PostList({onCreatePostClickedShowModal, onOutsideModalCl
                 "Content-Type": "application/json",
                 "Accept": "application/json",
             }
-        });
+        }).then(response => response.json()
+            .then(json => {
+                setPosts(json.Posts)
+            })
+        );
         setPosts( (existingPost) => [postData, ...existingPost] );
         console.log(postData);
-    };
+    }
 
-2
+
     return (
         <>
             {onCreatePostClickedShowModal && (
