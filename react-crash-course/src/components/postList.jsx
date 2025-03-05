@@ -5,6 +5,7 @@ import {Modal} from "@/components/Modal.jsx";
 
 export default function PostList({onCreatePostClickedShowModal, onOutsideModalClicked}){
     const [posts, setPosts] = useState([]);
+    const [isFetching, setIfFetching] = useState(false);
 
     useEffect(() => {
         async function fetchPosts(){
