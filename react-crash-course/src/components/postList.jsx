@@ -16,6 +16,7 @@ export default function PostList({onCreatePostClickedShowModal, onOutsideModalCl
             const responseData = await response.json();
             console.log(responseData);
             setPosts(responseData.posts);
+            setIsFetching(false);
         }
 
         fetchPosts().then();
@@ -55,14 +56,17 @@ export default function PostList({onCreatePostClickedShowModal, onOutsideModalCl
                 <p className={'text-2xl text-red-600'}>Loading.....</p>
             )}
 
-            {posts.length > 0 ? (
+            {!isFetching && posts.length === 0 && (
+                <p className={'text-2xl text-red-600'}>No posts found.</p>
+            )}
+
+            {posts.length > 0 && (
                 <div className='flex'>
                     {posts.map((post) =>
                         <Post key={post.body} author={post.author} body={post.body} />)
                     }
                 </div>
-            ) : <p className={'text-2xl text-red-600'}>No posts found.</p>}
-
+            )}
 
         </>
     )
