@@ -7,18 +7,18 @@ export default function PostList({onCreatePostClickedShowModal, onOutsideModalCl
     const [posts, setPosts] = useState([]);
 
     function addPostHandler(postData){
-        fetch("http://localhost:8080/posts", {
-            method: "POST",
-            body: JSON.stringify(postData),
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-            }
-        }).then(response => response.json()
-            .then(json => {
-                setPosts(json.Posts)
-            })
-        );
+        // fetch("http://localhost:8080/posts", {
+        //     method: "POST",
+        //     body: JSON.stringify(postData),
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //         "Accept": "application/json",
+        //     }
+        // }).then(response => response.json()
+        //     .then(json => {
+        //         setPosts(json.Posts)
+        //     })
+        // );
         setPosts( (existingPost) => [postData, ...existingPost] );
         console.log(postData);
     }
