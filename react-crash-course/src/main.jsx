@@ -3,7 +3,7 @@ import {createRoot} from 'react-dom/client'
 import './index.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import App from "@/Posts.jsx";
-import NewPost from "@/components/NewPost.jsx";
+import NewPost from "@/components/routes/NewPost.jsx";
 import RootLayout from "@/components/routes/RootLayout.jsx";
 
 const router = createBrowserRouter([

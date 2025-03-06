@@ -1,4 +1,4 @@
-import {Card, CardDescription, CardHeader, CardTitle} from "@/components/ui/card.js";
+import {Card, CardDescription, CardHeader, CardTitle} from "@/components/ui/card.tsx";
 
 function Post(props) {
     props.author;

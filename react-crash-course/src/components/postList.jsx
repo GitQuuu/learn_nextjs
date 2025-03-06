@@ -1,9 +1,9 @@
-import Post from "@/components/post.jsx";
-import NewPost from "@/components/NewPost.jsx";
+import Post from "@/components/routes/post.jsx";
+import NewPost from "@/components/routes/NewPost.jsx";
 import {useEffect, useState} from "react";
 import {Modal} from "@/components/Modal.jsx";
 
-export default function PostList({onCreatePostClickedShowModal, onOutsideModalClicked}){
+export default function PostList(){
     const [posts, setPosts] = useState([]);
     const [isFetching, setIsFetching] = useState(false);
 
@@ -42,15 +42,6 @@ export default function PostList({onCreatePostClickedShowModal, onOutsideModalCl
 
     return (
         <>
-            {onCreatePostClickedShowModal && (
-                <Modal onOutsideModalClick={onOutsideModalClicked} >
-                    <NewPost
-                        onCancel={onOutsideModalClicked} onAddPost={addPostHandler}>
-                    </NewPost>
-                </Modal>
-                )
-            }
-
 
             {isFetching && posts.length === 0 && (
                 <p className={'text-2xl text-red-600'}>Loading.....</p>
