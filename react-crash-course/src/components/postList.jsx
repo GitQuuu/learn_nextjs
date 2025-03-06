@@ -1,26 +1,9 @@
 import Post from "@/components/routes/post.jsx";
-import NewPost from "@/components/routes/NewPost.jsx";
-import {useEffect, useState} from "react";
-import {Modal} from "@/components/Modal.jsx";
+import {useLoaderData} from "react-router-dom";
 
 export default function PostList(){
-    const [posts, setPosts] = useState([]);
-    const [isFetching, setIsFetching] = useState(false);
+    const posts = useLoaderData();
 
-    useEffect(() => {
-        async function fetchPosts(){
-            setIsFetching(true);
-            const response = await fetch("http://localhost:8080/posts", {
-                method: "GET",
-            })
-            const responseData = await response.json();
-            console.log(responseData);
-            setPosts(responseData.posts);
-            setIsFetching(false);
-        }
-
-        fetchPosts().then();
-    }, []);
 
     function addPostHandler(postData){
         fetch("http://localhost:8080/posts", {
@@ -42,12 +25,7 @@ export default function PostList(){
 
     return (
         <>
-
-            {isFetching && posts.length === 0 && (
-                <p className={'text-2xl text-red-600'}>Loading.....</p>
-            )}
-
-            {!isFetching && posts.length === 0 && (
+            {posts.length === 0 && (
                 <p className={'text-2xl text-red-600'}>No posts found.</p>
             )}
 
