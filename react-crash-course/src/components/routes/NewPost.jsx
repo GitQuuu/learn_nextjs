@@ -1,8 +1,9 @@
 import classes from './NewPost.module.css';
 import {useState} from "react";
 import {Modal} from "@/components/Modal.jsx";
+import {Link, useNavigate} from "react-router-dom";
 
-function NewPost({onCancel, onAddPost}) {
+function NewPost({onAddPost}) {
     const [enteredBody, setEnteredBody] = useState([]);
     const [enteredAuthor, setEnteredAuthor] = useState([]);
 
@@ -22,7 +23,6 @@ function NewPost({onCancel, onAddPost}) {
         }
         console.log(postData);
         onAddPost(postData);
-        onCancel();
     }
     return (
         <Modal>
@@ -36,11 +36,12 @@ function NewPost({onCancel, onAddPost}) {
                 <input type="text" id="name" required onChange={authorChangeHandler}/>
             </p>
             <p className={classes.actions + " mt-2"}>
-                <button
+                <Link
+                    className={'bg-gray-200 rounded w-3/12 flex items-center justify-center'}
                     type={"button"}
-                    onClick={onCancel}
+                    to=".."
                 >Cancel
-                </button>
+                </Link>
                 <button type={"submit"}>Submit</button>
             </p>
         </form>
