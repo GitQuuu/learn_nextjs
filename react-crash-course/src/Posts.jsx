@@ -3,7 +3,7 @@ import PostList from "@/components/postList.jsx";
 import MainHeader from "@/components/MainHeader.jsx";
 import {useState} from "react";
 
-function App() {
+function Posts() {
 
     const [modalIsVisible, setModalIsVisible] = useState(false);
 
@@ -17,10 +17,9 @@ function App() {
 
     return (
         <>
-            <MainHeader onCreatePost={showModal}/>
             <PostList onCreatePostClickedShowModal={modalIsVisible} onOutsideModalClicked={hideModal}></PostList>
         </>
     )
 }
 
-export default App
+export default Posts
