@@ -1,4 +1,4 @@
-import Post from "@/components/routes/post.jsx";
+import Post from "@/routes/post.jsx";
 import {useLoaderData} from "react-router-dom";
 
 export default function PostList(){

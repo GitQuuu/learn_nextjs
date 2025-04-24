@@ -2,9 +2,9 @@ import {StrictMode} from 'react'
 import {createRoot} from 'react-dom/client'
 import './index.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import RootLayout from "@/components/routes/RootLayout.jsx";
+import RootLayout from "@/routes/RootLayout.jsx";
 import Posts, { loader as postsLoader } from "@/Posts.jsx";
-import NewPost from "@/components/routes/NewPost.jsx";
+import NewPost from "@/routes/NewPost.jsx";
 
 const router = createBrowserRouter([
     {
