@@ -1,9 +1,9 @@
 import classes from './NewPost.module.css';
 import {useState} from "react";
 import {Modal} from "@/components/Modal.jsx";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 
-function NewPost({onAddPost}) {
+function NewPost() {
     const [enteredBody, setEnteredBody] = useState([]);
     const [enteredAuthor, setEnteredAuthor] = useState([]);
 
@@ -21,9 +21,17 @@ function NewPost({onAddPost}) {
             body: enteredBody,
             author: enteredAuthor,
         }
-        console.log(postData);
-        onAddPost(postData);
+
+            fetch("http://localhost:8080/posts", {
+                method: "POST",
+                body: JSON.stringify(postData),
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                }
+            });
     }
+    
     return (
         <Modal>
         <form className={classes.form} onSubmit={submitHandler}>
