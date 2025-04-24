@@ -1,12 +1,12 @@
 import classes from './NewPost.module.css';
 import {Modal} from "@/components/Modal.jsx";
-import {Link} from "react-router-dom";
+import {Link, Form} from "react-router-dom";
 
 function NewPost() {
 
     return (
         <Modal>
-        <form className={classes.form} >
+        <Form method='post' className={classes.form} >
             <p>
                 <label htmlFor="body">Text</label>
                 <textarea id="body" name="body" required rows={3} />
@@ -24,7 +24,7 @@ function NewPost() {
                 </Link>
                 <button type={"submit"}>Submit</button>
             </p>
-        </form>
+        </Form>
         </Modal>
     );
 }
