@@ -13,7 +13,7 @@ export default function PostList(){
             {posts.length > 0 && (
                 <div className='flex'>
                     {posts.map((post) =>
-                        <Post key={post.body} author={post.author} body={post.body} />)
+                        <Post id={post.id} key={post.body} author={post.author} body={post.body} />)
                     }
                 </div>
             )}
