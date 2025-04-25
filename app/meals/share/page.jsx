@@ -3,5 +3,5 @@ export default function SharePage() {
         <main>
             <h1>Share</h1>
         </main>
-    )   
+    )
 }
