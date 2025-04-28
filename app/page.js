@@ -6,6 +6,7 @@ export default function Home() {
         <>
             <header className={classes.header}>
                 <div className={classes.slideshow}>
+
                 </div>
                 <div>
                     <div className={classes.hero}>
