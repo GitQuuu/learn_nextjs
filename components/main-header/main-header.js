@@ -10,7 +10,7 @@ export default function MainHeader() {
         <header className={classes.header}>
             <Link className={classes.logo} href="/public">
                 <Image src={logoImg} alt="A plate with food on it" />
-                NextLevel Food
+                BetterDeveloper Food
             </Link>
 
             <nav className={classes.nav}>
