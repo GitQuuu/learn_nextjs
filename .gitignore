@@ -351,3 +351,7 @@ MigrationBackup/
 .next/cache/webpack/server-development/
 
 .idea/
+
+.next/cache/webpack/client-development/
+
+.next/static/webpack/
