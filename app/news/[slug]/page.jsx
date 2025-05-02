@@ -6,3 +6,4 @@ export default function newsDetails({params}) {
         <h1> {slug} </h1>
   );
 }
+

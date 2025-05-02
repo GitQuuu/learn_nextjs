@@ -1,5 +1,18 @@
+import Link from 'next/link';
+
 export default function MainHeader() {
     return (
-        <h1>Welcome to Our Website</h1>
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <Link href="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link href="/news">News</Link>
+                    </li>
+                </ul>
+            </nav>
+        </header>
     );
 }
