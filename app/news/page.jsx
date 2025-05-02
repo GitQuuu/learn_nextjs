@@ -11,6 +11,7 @@ export default function newsPage(){
 
     return (
         <>
+            <h1>News page</h1>
             <ul>
                 {newsItems.map((item) => (
                     <li key={item.id}>
