@@ -359,3 +359,5 @@ MigrationBackup/
 .next/static/chunks/
 
 .next/server/
+
+.next/
