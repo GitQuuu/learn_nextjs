@@ -355,3 +355,7 @@ MigrationBackup/
 .next/cache/webpack/client-development/
 
 .next/static/webpack/
+
+.next/static/chunks/
+
+.next/server/
