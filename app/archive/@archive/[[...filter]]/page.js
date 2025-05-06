@@ -1,4 +1,4 @@
-import {getAvailableNewsMonths, getAvailableNewsYears, getNewsForYear} from "@/app/lib/news";
+import {getAvailableNewsMonths, getAvailableNewsYears, getNewsForYear, getNewsForYearAndMonth} from "@/app/lib/news";
 import Link from "next/link";
 import NewsList from "@/app/components/news-list/news-list";
 
@@ -16,9 +16,15 @@ export default function FilteredNewsPage({params}) {
         links = getAvailableNewsMonths(selectedYear);
     }
 
+    if (selectedYear && selectedMonth) {
+        news = getNewsForYearAndMonth(selectedYear, selectedMonth);
+
+    }
+
     let newsContent = <p>No news found for the selected period</p>
     if (news && news.length > 0) {
         newsContent = <NewsList news={news}></NewsList>
+        links = [];
     }
 
 
