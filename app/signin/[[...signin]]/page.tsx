@@ -4,8 +4,11 @@ import { SignIn } from "@clerk/nextjs";
 
 export default function SignInPage() {
     return (
-        <div className="flex justify-center items-center h-screen">
-            <SignIn afterSignInUrl="/home" />
-        </div>
+        <>
+            <h1 className="flex justify-center">Welcome to this NextJS Course! with Clerk</h1>
+            <div className="flex justify-center items-center h-screen">
+                <SignIn afterSignInUrl="/home" />
+            </div>
+        </>
     );
 }
