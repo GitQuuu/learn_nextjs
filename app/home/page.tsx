@@ -1,6 +1,29 @@
-import {RedirectToSignIn, SignedIn, SignedOut} from "@clerk/nextjs";
+'use client';
+import { RedirectToSignIn, SignedIn, SignedOut, useAuth } from "@clerk/nextjs";
+import {useEffect} from "react";
+
 
 export default function Home() {
+    const { getToken, isLoaded, isSignedIn } = useAuth();
+
+    useEffect(() => {
+        const fetchToken = async () => {
+            console.log("Loaded:", isLoaded, "SignedIn:", isSignedIn);
+
+            if (isLoaded && isSignedIn) {
+                const token = await getToken(); // optional: { template: "your-template" }
+                if (token) {
+                    console.log("JWT Token:", token);
+                } else {
+                    console.warn("No JWT token returned");
+                }
+            }
+        };
+
+        fetchToken().then(r => {
+            
+        } );
+    }, [getToken, isLoaded, isSignedIn]);
 
     return (
         <>
@@ -17,3 +40,4 @@ export default function Home() {
         </>
     );
 }
+
