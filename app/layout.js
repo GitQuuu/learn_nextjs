@@ -12,12 +12,23 @@ export default function RootLayout({children}) {
         <ClerkProvider>
             <html lang="en">
             <body>
-            <nav style={{padding: '1rem', background: '#333', color: 'white'}}>
-                <Link href="/home" style={{marginRight: '1rem', color: 'white', textDecoration: 'none'}}>
-                    Home
-                </Link>
-                <Link href="/awesome" style={{color: 'white', textDecoration: 'none'}}>
-                    Awesome
+            <nav style={{
+                padding: '1rem',
+                background: '#333',
+                color: 'white',
+                display: 'flex',
+                justifyContent: 'space-between'
+            }}>
+                <div>
+                    <Link href="/home" style={{marginRight: '1rem', color: 'white', textDecoration: 'none'}}>
+                        Home
+                    </Link>
+                    <Link href="/awesome" style={{color: 'white', textDecoration: 'none'}}>
+                        Awesome
+                    </Link>
+                </div>
+                <Link href="/profile" style={{color: 'white', textDecoration: 'none'}}>
+                    MyProfile
                 </Link>
             </nav>
             {children}
