@@ -1,7 +1,6 @@
 import './globals.css'
 import {ClerkProvider} from "@clerk/nextjs";
-import Navbar from ".q/components/Navbar";
-
+import Navbar from "./components/navbar";
 
 export const metadata = {
     title: 'NextJS Course App',
