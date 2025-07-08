@@ -11,7 +11,7 @@ const Navbar = () => {
           Awesome
         </Link>
       </div>
-      <Link href="/profile" className="text-white no-underline">
+      <Link href="/user/account" className="text-white no-underline">
         MyProfile
       </Link>
     </nav>
